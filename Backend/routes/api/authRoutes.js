@@ -6,7 +6,7 @@ const _ = express.Router();
 
 
 
-_.post("/registration",secureApi,registrationController)
+_.post("/registration",registrationController)
 
 
 
