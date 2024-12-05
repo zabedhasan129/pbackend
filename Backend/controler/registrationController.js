@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 let registrationController = async (req, res) => {
     const { username, email, password } = req.body;
+    console.log("fronend send data",req.body)
     if (blankinput(username)) {
         res.send({ error: "username required" })
     }
@@ -21,11 +22,11 @@ let registrationController = async (req, res) => {
     else if (validPassword(password)) {
         res.send({ error: "password is short" })
     }
-    else {
+    else{
 
         let existingemail = await User.find({ email: email })
         console.log(existingemail)
-        if (existingemail.length > 1) {
+        if (existingemail.length > 0) {
             res.send({ error:`${email} already exixts`})
         }
         else {
