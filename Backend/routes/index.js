@@ -8,7 +8,7 @@ _.use(apiBaseUrl,apiRoutes)
 
 
 _.use((req,res)=>{
-    res.send("sawaon sir vala na heti khali areee pochay")
+    res.send({error: "sawaon sir vala na heti khali areee pochay"})
     
 })
 
